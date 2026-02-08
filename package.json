@@ -1,0 +1,24 @@
+{
+  "name": "websocket",
+  "version": "1.0.0",
+  "description": "A project to learn about real-time communication channels & providing bi-directional communication between a client & server",
+  "homepage": "https://github.com/boobeh123/tryingWebSockets#readme",
+  "bugs": {
+    "url": "https://github.com/boobeh123/tryingWebSockets/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boobeh123/tryingWebSockets.git"
+  },
+  "license": "ISC",
+  "author": "Bobby Asakawa",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "socket.io": "^4.8.3"
+  }
+}
