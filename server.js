@@ -13,7 +13,13 @@ app.get('/', (req, res) => {
 })
 
 io.on('connection', (socket) => {
-    console.log('A User connected');
+    
+    console.log('A User connected');    // displays in terminal on each GET request to '/' route
+
+    socket.on('disconnect', () => {
+        console.log('A User disconnected'); // displays in terminal when user closes (their browser) connection
+    })
+
 })
 
 server.listen(3000, () => {
