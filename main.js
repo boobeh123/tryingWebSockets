@@ -80,4 +80,22 @@ In our server.js:
 
 * Note that socket.emit() was used in our client-side js & socket.on() was used in our server-side js
     - Emit() is our sender & on() is our receiver
+
+/*************************************************************************
+* Broadcasting
+*************************************************************************/
+/*
+Socket.io can emit events from the server, to the rest of the users.
+
+I tried the code snippets below, but do not understand where to use & how to use it.
+I tried it on both the server & client, but did not 
+
+io.emit('hello', 'world');  // should emit event to all connected sockets
+ - 
+
+io.on('connection', (socket) => {
+  socket.broadcast.emit('hi');  // should emit event to all except a certain emitting socket?
+});
+
+
 */
