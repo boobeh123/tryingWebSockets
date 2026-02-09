@@ -16,6 +16,10 @@ io.on('connection', (socket) => {
     
     console.log('A User connected');    // displays in terminal on each GET request to '/' route
 
+    socket.on('chat message', (message) => {
+        console.log('message: ' + message);
+    })
+
     socket.on('disconnect', () => {
         console.log('A User disconnected'); // displays in terminal when user closes (their browser) connection
     })
