@@ -13,11 +13,17 @@ app.get('/', (req, res) => {
 })
 
 io.on('connection', (socket) => {
-    
+
     console.log('A User connected');    // displays in terminal on each GET request to '/' route
+    
+    // io.emit('hello', 'world')    // I do not see hello or world emitted
+    // socket.broadcast.emit('hi'); // The broadcast flag can send a message to everyone except for a certain emitting socket
+
 
     socket.on('chat message', (message) => {
-        console.log('message: ' + message);
+        console.log('message: ' + message); // displays the received input's value in the terminal when the form is submitted
+        io.emit('chat message', message);   // displays the received input's value on the browser
+        // socket.broadcast.emit('hello')   // I do not see 'hello' emitted when submitting the form
     })
 
     socket.on('disconnect', () => {
