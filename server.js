@@ -17,6 +17,7 @@ app.get('/', (req, res) => {
 io.on('connection', (socket) => {
 
     console.log('A User connected');    // displays in terminal on each GET request to '/' route
+    io.emit('chat event', 'A User connected');  // displays on browser on the 'chat event' channel
     
     // io.emit('hello', 'world')    // I do not see hello or world emitted
     // socket.broadcast.emit('hi'); // The broadcast flag can send a message to everyone except for a certain emitting socket
@@ -27,10 +28,12 @@ io.on('connection', (socket) => {
         io.emit('chat message', message);   // displays the received input's value on the browser
         // socket.broadcast.emit('hello')   // I do not see 'hello' emitted when submitting the form
     })
-
+    
     socket.on('disconnect', () => {
         console.log('A User disconnected'); // displays in terminal when user closes (their browser) connection
-    })
+        io.emit('chat event', "A User disconnected");   // displays in the browser
+    });
+
 
 })
 
