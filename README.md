@@ -4,6 +4,10 @@ My goal is to understand how to take the code from the documentation, optimize i
 
 I will provide a link to the deployed project: https://tryingwebsockets-production.up.railway.app/
 
+Updates:
+got a basic concept up & running 2/13/26
+![awyissbreadcrumbs](websocket.gif)
+
 The resources used to learn are from:
 
 * https://socket.io/docs/v4/tutorial/introduction
